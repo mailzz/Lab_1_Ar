@@ -1,0 +1,34 @@
+﻿@model WebApplication2.Models.University
+@{ 
+    ViewBag.Title = "Udate";
+}
+@{ var item = Model;}
+<style>
+    .control-label {
+        color: #d4b8b8;
+    }
+
+    .form-group {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .form-group1 {
+        margin-left: 37%;
+    }
+</style>
+<form asp-action="UpdateUniversity" asp-controller="University">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Название факультета</label>
+        <input type="text" asp-for="Name" class="form-control" value="@item.Name" />
+    </div>
+    <div class="form-group1">
+        <label asp-for="Rating" class="control-label">Рейтинг</label>
+        <input type="text" asp-for="Rating" class="form-control" value="@item.Rating" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+
+</form>

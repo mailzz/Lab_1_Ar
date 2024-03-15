@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/Style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="/University/University">Университет</a></li>
+                <li><a href="/Professors/Professors">Преподаватели</a></li>
+                <li><a href="/Groups/Groups">Группы</a></li>
+                <li><a href="/Sections/Sections">Секции</a></li>
+                <li><a href="/Directions/Directions">Предметы</a></li>
+            </ul>
+            </nav>
+
+        </header>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+    </html>

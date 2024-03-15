@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication2.Models.University>
+@{
+    ViewBag.Title = "Все факультеты";
+}
+<a class="new" asp-action="Create">Добаление факультета</a>
+<a class="new" asp-action="SortByRating">Сортировка</a>
+<style>
+    table {
+        width: 300px; /* Ширина таблицы */
+        margin: auto; /* Выравниваем таблицу по центру окна  */
+        background: #786868
+    }
+
+    td {
+        text-align: center; /* Выравниваем текст по центру ячейки */
+    }
+    .new {
+        background: #786868;
+        box-shadow: 0 0 5px rgb(0,0,0);
+        cursor: pointer;
+        border-radius: 5px;
+        color: rgb(255,255,255);
+        border: rgb(0,0,0);
+        border-color: #008a77;
+        text-align: center;
+        display: block;
+        width: 300px;
+        margin: 20px auto;
+    }
+    .new2 {
+        color: #593a3a;
+    }
+
+    
+</style>
+<table class="table" border="1">
+    <tr><td>Название</td><td>Рейтинг</td> </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Name</td>
+    <td>@item.Rating</td>
+    <th><a class ="new2" href="/University/DeleteUniversity/@item.UniversityId">Delete</a></th>
+    <th><a class ="new2" href="/University/UpdateUniversity/@item.UniversityId">Update</a></th>
+</tr>
+
+
+    }
+</table>
